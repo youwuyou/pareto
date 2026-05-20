@@ -8,7 +8,7 @@ You are given a working Python implementation of **Ab Initio Molecular Dynamics 
 
 The program is correct — but it is entirely sequential, CPU-only, and not portable across hardware.
 
-**Your mission:** Rewrite this program using the **ORIQX primitives** (See `ORIQX_PRIMITIVES.md`) by decomposing each computational step into hardware-agnostic operations. ORIQX will then automatically route, compile, and execute those primitives on the most efficient available hardware — CPU, GPU, TPU, QPU, or hybrid combinations — without you changing a single line of your submission code.
+**Your mission:** Rewrite this program using the **ORIQX primitives** (see [`docs/ORIQX_PRIMITIVES.md`](../../docs/ORIQX_PRIMITIVES.md)) by decomposing each computational step into hardware-agnostic operations. ORIQX will then automatically route, compile, and execute those primitives on the most efficient available hardware — CPU, GPU, TPU, QPU, or hybrid combinations — without you changing a single line of your submission code.
 
 This is not about rewriting the physics. It is about expressing the *same computation* in a form that a platform can optimize, schedule, and dispatch across heterogeneous hardware.
 
@@ -203,4 +203,4 @@ Acceptable tolerance: $|\Delta E| < 10^{-5}$ Ha per step.
 - Reference implementation: `baseline.py`, `aimd.py`, `scf.py`, `integrals.py`, `basis.py`
 - Reference trajectory for validation: `aimd_h2o_trajectory.xyz`
 - Gateway and API key: provided on the day of the hackathon
-- Studio (IR visualization): https://studio.oriqx.com
+- Studio (browser workspace): open from the dashboard at https://app.oriqx.com
