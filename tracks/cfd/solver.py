@@ -23,26 +23,24 @@
 #   ux.submit(mod, runtime_inputs=runtime_inputs, ...)
 # =============================================================================
 
-import numpy as np
-
-import uniqx as ux
-from uniqx import to_module, fmt_mat
-from uniqx.ops.primitives.solvers import linear_solve
-from uniqx.ops.control_flow import fori_loop
-from uniqx.core import types as ut
-
 import config
-from grid import Grid
-from step_b_pressure import build_poisson_matrix
+import numpy as np
+import uniqx as ux
 from _traced_ops import (
     block,
-    lap,
     div,
+    embed_pressure_neumann,
+    embed_velocity,
     grad_x,
     grad_y,
-    embed_velocity,
-    embed_pressure_neumann,
+    lap,
 )
+from grid import Grid
+from step_b_pressure import build_poisson_matrix
+from uniqx import fmt_mat, to_module
+from uniqx.core import types as ut
+from uniqx.ops.control_flow import fori_loop
+from uniqx.ops.primitives.solvers import linear_solve
 
 
 def _symmetric_pin(A: np.ndarray) -> np.ndarray:

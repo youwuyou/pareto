@@ -5,8 +5,9 @@
 # =============================================================================
 
 from dataclasses import dataclass, field
-import numpy as np
+
 import config
+import numpy as np
 
 
 @dataclass

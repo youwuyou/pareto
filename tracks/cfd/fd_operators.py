@@ -20,7 +20,6 @@
 
 import numpy as np
 
-
 # ── Hardcoded stencil coefficients ────────────────────────────────────────────
 
 def _weights_1st(k: int) -> np.ndarray:

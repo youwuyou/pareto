@@ -8,6 +8,7 @@ Provides: E, boys, R, overlap_primitive, kinetic_primitive,
 """
 
 import math
+
 import numpy as np
 from scipy.special import factorial2
 
@@ -111,9 +112,12 @@ def nuclear_primitive(a, A, angA, b, B, angB, C, Z):
 
 
 def eri_primitive(a, A, angA, b, B, angB, c, C, angC, d, D, angD):
-    l1, m1, n1 = angA; l2, m2, n2 = angB
-    l3, m3, n3 = angC; l4, m4, n4 = angD
-    p = a + b; q = c + d
+    l1, m1, n1 = angA
+    l2, m2, n2 = angB
+    l3, m3, n3 = angC
+    l4, m4, n4 = angD
+    p = a + b
+    q = c + d
     P = (a*A + b*B) / p
     Q = (c*C + d*D) / q
     RPQ = np.linalg.norm(P - Q)

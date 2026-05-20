@@ -12,10 +12,10 @@
 # variable stencil order (see fd_operators.py for coefficient tables).
 # =============================================================================
 
-import numpy as np
 import config
-from grid import Grid
+import numpy as np
 from fd_operators import laplacian_2d
+from grid import Grid
 
 
 def diffuse(

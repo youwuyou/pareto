@@ -6,8 +6,8 @@ Provides: maxwell_boltzmann_velocities, aimd, write_xyz
 """
 
 import numpy as np
-from scf import rhf_scf, compute_forces
-from constants import BOHR_TO_ANG, ANG_TO_BOHR, FS_TO_AUT, AMU_TO_AU, KB_AU
+from constants import AMU_TO_AU, ANG_TO_BOHR, BOHR_TO_ANG, FS_TO_AUT, KB_AU
+from scf import compute_forces, rhf_scf
 
 
 def maxwell_boltzmann_velocities(masses_amu, temperature_K, seed=None):

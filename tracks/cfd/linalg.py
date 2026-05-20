@@ -13,16 +13,16 @@
 # =============================================================================
 
 import warnings
-import numpy as np
+
+import config
 import jax.numpy as jnp
 import jax.scipy.sparse.linalg as jsla
-
-from uniqx import to_module, fmt_mat, fmt_vec, parse_result, run as ux_run
-from uniqx.ops.primitives.solvers import linear_solve
+import numpy as np
+from uniqx import fmt_mat, fmt_vec, parse_result, to_module
+from uniqx import run as ux_run
 from uniqx.core.modality import Modality
+from uniqx.ops.primitives.solvers import linear_solve
 from uniqx_client import get_client, get_or_build
-import config
-
 
 # =============================================================================
 # JAX backends

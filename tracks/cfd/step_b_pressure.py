@@ -20,14 +20,14 @@
 #   method="vqls"    — QPU stub                (linalg.solve_vqls)
 # =============================================================================
 
+import time
+
+import config
+import linalg
 import numpy as np
 import scipy.sparse as sp
-
-import linalg
-import config
-from grid import Grid
 from fd_operators import divergence_2d
-
+from grid import Grid
 
 # ---------------------------------------------------------------------------
 # Sub-step B.1 — Build the Laplacian matrix A  (called ONCE before the loop)
@@ -121,7 +121,6 @@ def build_rhs(
 # ---------------------------------------------------------------------------
 # Sub-step B.2 — Solve Ax = b via the configured backend
 # ---------------------------------------------------------------------------
-import time
 def solve_pressure(
     A_dense:   np.ndarray,
     b:         np.ndarray,
@@ -150,7 +149,7 @@ def solve_pressure(
         pressure_vector = linalg.solve_direct(A_dense, b)
         time_finish = time.time()
         print(f"[solver] Pressure solve time: {time_finish - time_start:.3f} seconds")
-        
+
     elif method == "cg":
         pressure_vector = linalg.solve_cg(A_dense, b, tol=tolerance)
 

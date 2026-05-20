@@ -7,9 +7,10 @@ basis functions for each atom in the molecule.
 """
 
 import os
+
 import numpy as np
-from integrals import primitive_norm
 from constants import CHARGES
+from integrals import primitive_norm
 
 _DAT_FILE = os.path.join(os.path.dirname(__file__), "sto-3g.dat")
 

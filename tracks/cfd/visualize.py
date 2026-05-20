@@ -12,10 +12,10 @@
 # =============================================================================
 
 import warnings
-import numpy as np
-import matplotlib.pyplot as plt
-from grid import Grid
 
+import matplotlib.pyplot as plt
+import numpy as np
+from grid import Grid
 
 # ── Internal helpers ──────────────────────────────────────────────────────────
 
@@ -60,7 +60,8 @@ def _render_row(
     )
     fig.colorbar(im, ax=ax, label="|u| [m/s]", shrink=0.85)
     ax.set_title("Velocity Magnitude")
-    ax.set_xlabel("x");  ax.set_ylabel("y")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
     if row_label:
         ax.set_ylabel(f"step {step}\ny", labelpad=4)
 
@@ -75,8 +76,10 @@ def _render_row(
             )
             fig.colorbar(strm.lines, ax=ax, label="|u| [m/s]", shrink=0.85)
     ax.set_title("Streamlines")
-    ax.set_xlabel("x");  ax.set_ylabel("y")
-    ax.set_xlim(0, grid.L);  ax.set_ylim(0, grid.L)
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.set_xlim(0, grid.L)
+    ax.set_ylim(0, grid.L)
     ax.set_aspect("equal")
 
     # --- Panel 3: pressure contours ---
@@ -85,7 +88,8 @@ def _render_row(
     ax.contour(X, Y, p_full, levels=20, colors="k", linewidths=0.4, alpha=0.4)
     fig.colorbar(cf, ax=ax, label="p [Pa]", shrink=0.85)
     ax.set_title("Pressure Field")
-    ax.set_xlabel("x");  ax.set_ylabel("y")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
     ax.set_aspect("equal")
 
 

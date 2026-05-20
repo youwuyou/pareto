@@ -14,10 +14,10 @@
 # same variable stencil order used for the divergence in Step B.
 # =============================================================================
 
-import numpy as np
 import config
-from grid import Grid
+import numpy as np
 from fd_operators import gradient_2d
+from grid import Grid
 
 
 def correct_velocity(

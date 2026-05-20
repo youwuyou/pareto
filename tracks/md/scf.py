@@ -7,10 +7,15 @@ Provides: build_overlap_kinetic, build_nuclear, build_eri_tensor,
 """
 
 import numpy as np
-from integrals import (contracted_integral, overlap_primitive,
-                       kinetic_primitive, nuclear_primitive, eri_primitive)
 from basis import build_basis
 from constants import CHARGES
+from integrals import (
+    contracted_integral,
+    eri_primitive,
+    kinetic_primitive,
+    nuclear_primitive,
+    overlap_primitive,
+)
 
 
 def build_overlap_kinetic(basis):
@@ -105,8 +110,10 @@ def compute_forces(atoms_bohr, n_electrons, fd_step=0.005):
     forces    = np.zeros_like(positions)
     for i in range(len(symbols)):
         for d in range(3):
-            pf = positions.copy(); pf[i,d] += fd_step
-            pb = positions.copy(); pb[i,d] -= fd_step
+            pf = positions.copy()
+            pf[i, d] += fd_step
+            pb = positions.copy()
+            pb[i, d] -= fd_step
             ef = rhf_scf(list(zip(symbols, pf.tolist())), n_electrons)
             eb = rhf_scf(list(zip(symbols, pb.tolist())), n_electrons)
             forces[i,d] = -(ef - eb) / (2*fd_step)

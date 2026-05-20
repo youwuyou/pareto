@@ -11,11 +11,10 @@
 # =============================================================================
 
 import os
-import numpy as np
-
-import uniqx as ux
 
 import config
+import numpy as np
+import uniqx as ux
 from grid import Grid
 from solver import run
 from visualize import plot_snapshots
@@ -47,7 +46,7 @@ def main():
     print(f"\n{grid}\n")
 
     mod, runtime_inputs = run(grid)
-    print(f"[main] module built — submitting to gateway…", flush=True)
+    print("[main] module built — submitting to gateway…", flush=True)
 
     gateway = os.environ.get("UNIQX_GATEWAY", "api.oriqx.com:443")
     api_key = os.environ.get("UNIQX_API_KEY")
