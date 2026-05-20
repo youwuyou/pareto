@@ -1,6 +1,6 @@
 # Track: MD
 
-Run a molecular-dynamics step traced through the SDK. The starter ships a harmonic-coupling crystal scaffold so the trace pattern matches the established CFD / chemistry kernels. The Lennard-Jones extension is your work.
+Run a molecular-dynamics step traced through the SDK. The platform places each matmul on whatever hardware the engine picks; you set the lattice, the timestep, and how far you push toward Lennard-Jones.
 
 ## What ships
 
@@ -28,13 +28,13 @@ from uniqx.domains.common.spatial import pairwise_distances, neighbor_list
 
 ## Where to push beyond the starter
 
-| Direction | Difficulty | Effort |
-|---|---|---|
-| Larger crystal (256, 1024 atoms) | Easy | Resize the lattice; the matrix scales `N²` |
-| Replace harmonic with LJ via per-pair traced ops | Medium | Unroll over pair indices using `ops.sub`/`mul`/`pow` at trace time |
-| Add Langevin or Nosé-Hoover thermostat | Medium | Wraps a stochastic / extended-system step around the Verlet kernel |
-| Learned force field (GNN-style) | Hard | See `uniqx.domains.ml` for the GNN primitives |
-| Multi-step trajectory traced as a single module | Hard | Use `ops.control_flow` / `fori_loop` to fold N steps into one trace |
+| Direction | What changes |
+|---|---|
+| Larger crystal (256, 1024 atoms) | Resize the lattice; the matrix scales `N²`; GPU starts beating CPU |
+| Replace harmonic with LJ via per-pair traced ops | Unroll over pair indices using `ops.sub`/`mul`/`pow` at trace time |
+| Add Langevin or Nosé-Hoover thermostat | Wraps a stochastic / extended-system step around the Verlet kernel |
+| Learned force field (GNN-style) | See `uniqx.domains.ml` for the GNN primitives |
+| Multi-step trajectory traced as a single module | Use `ops.control_flow` / `fori_loop` to fold N steps into one trace |
 
 ## Reference behaviour
 

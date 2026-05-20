@@ -7,7 +7,7 @@ Compute the SCF ground-state energy and NMR shieldings for a small molecule. The
 - [`starter.ipynb`](starter.ipynb) — H₂O at STO-3G, full preflight → submit → compare-to-PySCF workflow.
 - [`baseline.py`](baseline.py) — PySCF RHF reference for accuracy comparison.
 
-## SDK surface you'll use
+## SDK surface
 
 ```python
 from uniqx.domains.chemistry.basis import extract_basis
@@ -39,7 +39,7 @@ runtime_inputs = [
 | Geometry optimization | Wraps SCF in an outer minimization loop |
 | Tighten `max_iter` / convergence | Trades accuracy for runtime — read the `max_error_rate` column |
 
-## Reference values
+## Reference behaviour
 
 H₂O at STO-3G: RHF total energy ≈ −74.96 Ha (PySCF reference). The starter checks within 5 mHa.
 
