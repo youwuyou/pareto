@@ -30,3 +30,7 @@ Thumbs.db
 # Local-only logs
 *.log
 /.ruff_cache/
+
+# SDK local cache + trace artefacts (never commit)
+uniqx_store.redb
+_traced_ops.py

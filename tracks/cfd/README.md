@@ -6,6 +6,7 @@ Run a 2-D Lattice-Boltzmann channel-flow step traced through the SDK. The platfo
 
 - [`starter.ipynb`](starter.ipynb) — 64 × 16 Poiseuille channel at Re=100, single LBM step traced as a matmul, full preflight workflow.
 - [`baseline.py`](baseline.py) — Pure-NumPy reference LBM step. Used to validate that the gateway's matmul matches.
+- [`hackathon_cfd/`](hackathon_cfd/) — extended sub-track: 2-D incompressible Stokes flow via Chorin projection, three hardware-mapped stages (diffusion → pressure Poisson → correction), lid-driven cavity at Re=100. See [`hackathon_cfd/README.md`](hackathon_cfd/README.md).
 
 ## SDK surface
 
