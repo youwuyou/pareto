@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # config.py — Single source of truth for all simulation parameters.
 # Every other module imports constants from here.

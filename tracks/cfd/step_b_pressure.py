@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # step_b_pressure.py — Step B: Pressure Poisson equation (QPU backend).
 #

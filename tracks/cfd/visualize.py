@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # visualize.py — Post-processing: velocity heatmap, streamlines, pressure.
 #

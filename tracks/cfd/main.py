@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # main.py — Entry point for the 2D Stokes flow solver.
 #

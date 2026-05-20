@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # fd_operators.py — Variable-order finite-difference operators for 2D fields.
 #

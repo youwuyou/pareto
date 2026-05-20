@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # solver.py — Build one Uniqx IR module containing the full Stokes iteration.
 #

@@ -1,11 +1,14 @@
-# uniqx_client.py — Singleton gateway client and module cache for hackaton_cfd.
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
+# uniqx_client.py — Singleton gateway client and module cache for the CFD track.
 #
 # Both linalg.py and fd_operators.py share the same client and module cache so
 # @to_module traces happen once per matrix size and are reused across all time steps.
 
+import os
+
 import uniqx
 
-UNIQX_TARGET = "localhost:50050"
+UNIQX_TARGET = os.environ.get("UNIQX_GATEWAY", "api.oriqx.com:443")
 
 _client = None
 _MODULE_CACHE: dict = {}

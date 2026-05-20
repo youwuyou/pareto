@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # grid.py — Grid geometry and derived simulation parameters.
 # Reads constants from config.py; all other modules import Grid from here.

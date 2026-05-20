@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # step_c_correction.py — Step C: Velocity correction (CPU/TPU backend).
 #

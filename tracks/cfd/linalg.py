@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # linalg.py — Linear algebra backends for the pressure Poisson solve (Step B).
 #

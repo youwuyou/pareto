@@ -1,3 +1,4 @@
+# Copyright (c) 2026 ORIQX AG. MIT licensed.
 # =============================================================================
 # boundary.py — Enforce boundary conditions for the lid-driven cavity.
 #
