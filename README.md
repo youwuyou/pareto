@@ -48,7 +48,7 @@ Two steps before any code runs: **register**, then **export your API key**.
 3. Sign in at [app.oriqx.com](https://app.oriqx.com), open the **Downloads** page in the sidebar, and click **"Lost your key? Regenerate"**. The new key (`uxk_...`) is shown exactly once — copy it immediately. Regenerating rotates the auto-minted default; any open Studio workspaces will need a refresh to pick up the new value.
 4. Use that key everywhere: in the wheel-index URL (below) and as the argument to `uniqx.login()` in your code (the first cell of every starter calls it; the key persists to `~/.config/uniqx/credentials.json` so you only need it in env for the very first run).
 
-Full walkthrough: [docs.oriqx.com/getting-started-hackathon](https://docs.oriqx.com/getting-started-hackathon).
+Full walkthrough: [app.oriqx.com/docs](https://app.oriqx.com/docs).
 
 ### 2 · Export the key and install
 

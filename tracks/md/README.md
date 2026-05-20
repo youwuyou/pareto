@@ -199,7 +199,7 @@ Acceptable tolerance: $|\Delta E| < 10^{-5}$ Ha per step.
 
 ## Resources
 
-- ORIQX SDK documentation: https://docs.oriqx.com
+- ORIQX SDK documentation: https://app.oriqx.com/docs
 - Reference implementation: `baseline.py`, `aimd.py`, `scf.py`, `integrals.py`, `basis.py`
 - Reference trajectory for validation: `aimd_h2o_trajectory.xyz`
 - Gateway and API key: provided on the day of the hackathon

@@ -68,4 +68,4 @@ Your PR must be *opened* before the deadline. Pushes to an open PR are accepted 
 
 - Operational status: [status.oriqx.com](https://status.oriqx.com)
 - Hackathon support: Slack workspace shared by your organiser
-- SDK docs: [docs.oriqx.com](https://docs.oriqx.com)
+- SDK docs: [app.oriqx.com/docs](https://app.oriqx.com/docs)
