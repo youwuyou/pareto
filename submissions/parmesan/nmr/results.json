@@ -4,17 +4,17 @@
     "Artemiy Burov",
     "WU, You"
   ],
-  "track": "nmr",
-  "workload_description": "",
-  "preflight_choice": "REPLACE — label from PreflightResult, e.g. cpu-only",
-  "justification": "REPLACE — 3-6 sentences referencing specific numbers from preflight().summary().",
+  "track": "custom",
+  "workload_description": "Full NMR pipeline for anti-3,4-difluoroheptane: ab initio chemical shieldings via RHF/STO-3G + CPHF, and 19F spectrum simulation via spin Hamiltonian time evolution (expv). Connects quantum chemistry (shieldings_module) with quantum spin dynamics (expv) on a single platform, demonstrating Pareto frontier scaling from 7 to 59 basis functions (chemistry) and 3 to 5+ spins (dynamics).",
+  "preflight_choice": "cpu+gpu",
+  "justification": "For shieldings, cpu+gpu is 30x faster than cpu-only (752K vs 22.6M tu) with zero error and 0.31g CO2. The cpu+gpu+qpu option saves only 12% more time while introducing 10.28% error and 103kg CO2 — a 330,000x carbon penalty. For spin dynamics (5-spin), cpu+gpu at 383 tu is 21x faster than cpu-only (8196 tu) with zero error. The QPU-hybrid option has 73.5% error, unusable for NMR. At current system sizes, GPU acceleration dominates; the quantum crossover requires larger spin counts where 2^n scaling favors native quantum evolution.",
   "metrics": {
     "runtime_s": 0.0,
     "accuracy_rel_error": 0.0,
     "cost_usd": 0.0,
-    "carbon_g": 0.0,
-    "problem_size": 0
+    "carbon_g": 0.31,
+    "problem_size": 59
   },
-  "baseline_comparison": "REPLACE — describe baseline (PySCF / NumPy / custom) and what was compared.",
-  "stretch": ""
+  "baseline_comparison": "PySCF RHF/STO-3G for H2O shieldings (E=-74.963 Ha, O:1252 ppm, H:329 ppm). scipy.linalg.expm for spin dynamics FID (256 points, 5-spin subsystem). Relative error <1e-4 for H2O vs PySCF reference. SPINACH ground truth available for full 16-spin spectrum comparison.",
+  "stretch": "Phosphorus cluster (34 spins = 2^34 Hilbert space) matching qsim-statevec simulator capacity. Frontier movement analysis across 4 subsystem sizes. Carbon footprint analysis showing 330,000x QPU/GPU ratio."
 }
