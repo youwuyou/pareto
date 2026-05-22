@@ -1,0 +1,78 @@
+{
+  "bench_n": 32,
+  "conv_steps": 500,
+  "timing_steps": 100,
+  "grid_sizes": [
+    8,
+    16,
+    32
+  ],
+  "convergence": {
+    "direct": {
+      "converged": false,
+      "steady_state": true,
+      "steps": 500,
+      "elapsed_s": 18.316477854000027,
+      "div_note": "max|div| ~8.2 is near-wall BC artefact, not solver failure"
+    },
+    "cg": {
+      "converged": false,
+      "steady_state": true,
+      "steps": 500,
+      "elapsed_s": 38.647188392999965,
+      "div_note": "max|div| ~8.2 is near-wall BC artefact, not solver failure"
+    }
+  },
+  "totals": [
+    {
+      "backend": "jax/direct",
+      "N": 8,
+      "ms_per_step": 4.788407849999885
+    },
+    {
+      "backend": "jax/cg",
+      "N": 8,
+      "ms_per_step": 93.95513907999998
+    },
+    {
+      "backend": "jax/direct",
+      "N": 16,
+      "ms_per_step": 2.901205339999251
+    },
+    {
+      "backend": "jax/cg",
+      "N": 16,
+      "ms_per_step": 74.64785774000006
+    },
+    {
+      "backend": "jax/direct",
+      "N": 32,
+      "ms_per_step": 73.79205296000009
+    },
+    {
+      "backend": "jax/cg",
+      "N": 32,
+      "ms_per_step": 92.5197548999995
+    }
+  ],
+  "stages": {
+    "direct": {
+      "A_ms": 0.542399340331545,
+      "B_ms": 30.829161271247017,
+      "C_ms": 0.5479126056130292,
+      "A_std": 0.030535884760110633,
+      "B_std": 66.69295663064237,
+      "C_std": 0.04873995079527869,
+      "total_ms": 31.91947321719159
+    },
+    "cg": {
+      "A_ms": 0.26818679290530617,
+      "B_ms": 106.8916935834507,
+      "C_ms": 0.3223713093150951,
+      "A_std": 0.16712571672433416,
+      "B_std": 29.950070369517718,
+      "C_std": 0.17609022469741603,
+      "total_ms": 107.48225168567112
+    }
+  }
+}
