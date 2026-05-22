@@ -68,3 +68,8 @@ We may not be able to apply this algorithm for the NS-equations to fall into the
 
 ### NMR
 
+- **Phosphorus cluster (34 spins):** A phosphorus cluster with 7×³¹P + 27×¹H has exactly 34 active spins — matching the qsim-statevec simulator limit (34 qubits). At dim = 2³⁴ ≈ 17 billion, dense classical simulation is infeasible, MPS/tensor-network methods are borderline, and Trotterized quantum time evolution becomes the native approach. We prepared the NMR parameters, extracted the SPINACH ground truth, and built the Hamiltonian construction using `ops.two_body`/`ops.embed`. The preflight analysis at this scale would show whether the platform routes to the quantum simulator or QPU — the exact classical–quantum crossover point for NMR.
+
+- **Execute the full pipeline end-to-end:** The compiled backend currently caps at ~10 basis functions for chemistry and dim=32 for `expv`. With the transport-error fix, the difluoroheptane shieldings (59 basis, 752K tu on `cpu+gpu`) and 16-spin spectrum simulation would run. J-couplings are blocked by a separate gateway bug (transpose error on compiled, `qreset`/`cnot` operand errors on other backends).
+
+- **Larger basis sets:** Upgrading from STO-3G (59 basis) to 6-31G (109 basis) would improve shielding accuracy and let us compare computed chemical shifts directly against the experimental values from the difluoroheptane paper.
