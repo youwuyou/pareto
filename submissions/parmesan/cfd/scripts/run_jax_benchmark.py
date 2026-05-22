@@ -32,8 +32,8 @@ from scipy.stats import hmean
 
 # ── Resolve paths ──────────────────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CFD_PATH   = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../tracks/cfd"))
-ASSETS_DIR = os.path.join(SCRIPT_DIR, "assets")
+CFD_PATH   = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../tracks/cfd"))
+ASSETS_DIR = os.path.join(SCRIPT_DIR, "../assets")
 
 if CFD_PATH not in sys.path:
     sys.path.insert(0, CFD_PATH)

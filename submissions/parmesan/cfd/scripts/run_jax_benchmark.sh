@@ -7,13 +7,13 @@
 # collect per-stage timing data and save it as JSON for notebook plotting.
 #
 # Usage (from any directory):
-#   bash submissions/parmesan/cfd/run_jax_benchmark.sh
+#   bash submissions/parmesan/cfd/scripts/run_jax_benchmark.sh
 # =============================================================================
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CFD_DIR="$(realpath "$SCRIPT_DIR/../../../tracks/cfd")"
-ASSETS_DIR="$SCRIPT_DIR/assets"
+CFD_DIR="$(realpath "$SCRIPT_DIR/../../../../tracks/cfd")"
+ASSETS_DIR="$SCRIPT_DIR/../assets"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 VARIANT="N8-16-32_direct-cg"
 RUN_DIR="$ASSETS_DIR/${TIMESTAMP}_${VARIANT}"
@@ -49,7 +49,7 @@ for N in 8 16 32; do
             --steps "$STEPS" \
             --n "$N"
         # Copy the figure produced by jax_main.py into the timestamped run dir
-        FIG_SRC="$SCRIPT_DIR/assets/results_jax.png"
+        FIG_SRC="$ASSETS_DIR/results_jax.png"
         [ -f "$FIG_SRC" ] && cp "$FIG_SRC" "$RUN_DIR/results_jax_N${N}_${SOLVER}.png"
         echo ""
     done
