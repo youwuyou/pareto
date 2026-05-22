@@ -61,6 +61,14 @@ pip install -e ".[all]"
 jupyter nbconvert --execute submissions/<team>/submission.ipynb
 ```
 
+### CFD
+
+```
+# Make sure to install the additional packages for visualization of the 3D plot
+pip install -r tracks/cfd/requirements.txt
+```
+
+
 ## What we'd do with more time
 
 (Optional.) Stretch ideas, alternative algorithms, known failure modes.
